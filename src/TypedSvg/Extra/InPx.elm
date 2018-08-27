@@ -1,15 +1,18 @@
-module TypedSvg.Extra.InPx exposing (..)
+module TypedSvg.Extra.InPx exposing (centeredImage)
 
 {-| Typed SVG elements that default to `px` units
 
+
 # Helpers
+
 @docs centeredImage
+
 -}
 
 import TypedSvg exposing (image)
-import TypedSvg.Core exposing (Svg)
 import TypedSvg.Attributes exposing (xlinkHref)
-import TypedSvg.Attributes.InPx exposing (x, y, width, height)
+import TypedSvg.Attributes.InPx exposing (height, width, x, y)
+import TypedSvg.Core exposing (Svg)
 
 
 {-| Centers an image (png, svg, etc.) on the given x, y coordinate

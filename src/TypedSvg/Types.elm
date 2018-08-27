@@ -1,90 +1,39 @@
-module TypedSvg.Types
-    exposing
-        ( Accumulate(..)
-        , Additive(..)
-        , Align(..)
-        , AlignmentBaseline(..)
-        , AnchorAlignment(..)
-        , AnimateTransformType(..)
-        , AttributeType(..)
-        , BaselineShift(..)
-        , BezierAnchorPoint
-        , CalcMode(..)
-        , Clip(..)
-        , ClipPath(..)
-        , ClipRule(..)
-        , ClockValue
-        , ColorInterpolation(..)
-        , ColorMatrixType(..)
-        , ColorProfile(..)
-        , CompositeOperator(..)
-        , CoordinateSystem(..)
-        , Cursor(..)
-        , Direction(..)
-        , Display(..)
-        , DominantBaseline(..)
-        , Duration(..)
-        , EdgeMode(..)
-        , FillRule(..)
-        , Filter(..)
-        , FloodColor(..)
-        , FontSizeAdjust(..)
-        , FontStretch(..)
-        , FontStyle(..)
-        , FontVariant(..)
-        , FontWeight(..)
-        , FuncType(..)
-        , InValue(..)
-        , Kerning(..)
-        , Length(..)
-        , LengthAdjust(..)
-        , MarkerCoordinateSystem(..)
-        , MeetOrSlice(..)
-        , Mode(..)
-        , MorphologyOperator(..)
-        , Opacity(..)
-        , Rendering(..)
-        , RepeatCount(..)
-        , Restart(..)
-        , Scale(..)
-        , ShapeRendering(..)
-        , TimingValue(..)
-        , Transform(..)
-        , TurbulenceType(..)
-        , YesNo(..)
-          -- Lengths
-        , cm
-        , em
-        , ex
-        , inch
-        , mm
-        , num
-        , pc
-        , percent
-        , pt
-        , px
-        )
+module TypedSvg.Types exposing
+    ( Accumulate(..), Additive(..), Align(..), AlignmentBaseline(..), AnchorAlignment(..)
+    , AnimateTransformType(..), AttributeType(..), BaselineShift(..), BezierAnchorPoint
+    , CalcMode(..), Clip(..), ClipPath(..), ClipRule(..), ClockValue, ColorInterpolation(..)
+    , ColorMatrixType(..), ColorProfile(..), CompositeOperator(..), CoordinateSystem(..), Cursor(..)
+    , Direction(..), Display(..), DominantBaseline(..), Duration(..), EdgeMode(..), FillRule(..), Filter(..)
+    , FloodColor(..), FontSizeAdjust(..), FontStretch(..), FontStyle(..), FontVariant(..), FontWeight(..)
+    , FuncType(..), InValue(..), Kerning(..), Length(..), LengthAdjust(..), MarkerCoordinateSystem(..)
+    , MeetOrSlice(..), Mode(..), MorphologyOperator(..), Opacity(..), Rendering(..), RepeatCount(..)
+    , Restart(..), Scale(..), ShapeRendering(..), TimingValue(..), Transform(..), TurbulenceType(..)
+    , YesNo(..)
+    , cm, em, ex, inch, mm, num, pc, percent, pt, px
+    -- Lengths
+    )
 
-{-|
+{-| The Types module defines all of the types used by TypedSvg.
 
-The Types module defines all of the types used by TypedSvg.
 
 # Types
-@docs Accumulate, Additive, Align, AlignmentBaseline, AnchorAlignment,
-    AnimateTransformType, AttributeType, BaselineShift, BezierAnchorPoint,
-    CalcMode, Clip, ClipPath, ClipRule, ClockValue, ColorInterpolation,
-    ColorMatrixType, ColorProfile, CompositeOperator, CoordinateSystem, Cursor,
-    Direction, Display, DominantBaseline, Duration, EdgeMode, FillRule, Filter,
-    FloodColor, FontSizeAdjust, FontStretch, FontStyle, FontVariant, FontWeight,
-    FuncType, InValue, Kerning, Length, LengthAdjust, MarkerCoordinateSystem,
-    MeetOrSlice, Mode, MorphologyOperator, Opacity, Rendering, RepeatCount,
-    Restart, Scale, ShapeRendering, TimingValue, Transform, TurbulenceType,
-    YesNo
+
+@docs Accumulate, Additive, Align, AlignmentBaseline, AnchorAlignment
+@docs AnimateTransformType, AttributeType, BaselineShift, BezierAnchorPoint
+@docs CalcMode, Clip, ClipPath, ClipRule, ClockValue, ColorInterpolation
+@docs ColorMatrixType, ColorProfile, CompositeOperator, CoordinateSystem, Cursor
+@docs Direction, Display, DominantBaseline, Duration, EdgeMode, FillRule, Filter
+@docs FloodColor, FontSizeAdjust, FontStretch, FontStyle, FontVariant, FontWeight
+@docs FuncType, InValue, Kerning, Length, LengthAdjust, MarkerCoordinateSystem
+@docs MeetOrSlice, Mode, MorphologyOperator, Opacity, Rendering, RepeatCount
+@docs Restart, Scale, ShapeRendering, TimingValue, Transform, TurbulenceType
+@docs YesNo
 
 @docs cm, em, ex, inch, mm, num, pc, percent, pt, px
+
 -}
 
-import Color exposing (Color)
+import TypedSvg.Color exposing (Color)
 
 
 {-| -}
@@ -159,7 +108,11 @@ type BaselineShift
 
 {-| -}
 type alias BezierAnchorPoint =
-    ( Float, Float, Float, Float )
+    { x1 : Float
+    , y1 : Float
+    , x2 : Float
+    , y2 : Float
+    }
 
 
 {-| -}
@@ -413,8 +366,8 @@ type Kerning
 
 
 {-| The Length type is an important type in the TypedSvg package--it is used
-    wherever CSS needs to measure a length or distance in a certain unit (px,
-    em, etc.)
+wherever CSS needs to measure a length or distance in a certain unit (px,
+em, etc.)
 -}
 type Length
     = Cm Float

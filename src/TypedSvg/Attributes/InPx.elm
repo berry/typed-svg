@@ -1,4 +1,9 @@
-module TypedSvg.Attributes.InPx exposing (..)
+module TypedSvg.Attributes.InPx exposing
+    ( x, y, r, width, height, strokeWidth
+    , fontSize, textLength
+    , markerWidth, markerHeight
+    , cx, cy, dx, dy, fx, fy, rx, ry, x1, y1, x2, y2
+    )
 
 {-| This module exposes all Length attributes (x, y, width, etc.) as px-based
 attributes. It's used as a shortcut so that it becomes unnecessary to prefix
@@ -6,20 +11,17 @@ each numeric length with the `px` function.
 
 Example:
 
-    import Html exposing (Html)
     import Color
-    import TypedSvg exposing (svg, rect)
-    import TypedSvg.Attributes exposing (viewBox, fill, stroke)
-    import TypedSvg.Attributes.InPx exposing (x, y, width, height, strokeWidth)
-
+    import Html exposing (Html)
+    import TypedSvg exposing (rect, svg)
+    import TypedSvg.Attributes exposing (fill, stroke, viewBox)
+    import TypedSvg.Attributes.InPx exposing (height, strokeWidth, width, x, y)
 
     type Msg
         = NoOp
 
-
     type alias Model =
         Int
-
 
     view : Model -> Html Msg
     view model =
@@ -38,22 +40,31 @@ Example:
                 []
             ]
 
+
 # Common Length Attributes
+
 @docs x, y, r, width, height, strokeWidth
 
+
 # Text
+
 @docs fontSize, textLength
 
+
 # Marker
+
 @docs markerWidth, markerHeight
 
+
 # Other
+
 @docs cx, cy, dx, dy, fx, fy, rx, ry, x1, y1, x2, y2
+
 -}
 
+import TypedSvg.Attributes as Attr
 import TypedSvg.Core exposing (Attribute)
 import TypedSvg.Types exposing (px)
-import TypedSvg.Attributes as Attr
 
 
 {-| -}

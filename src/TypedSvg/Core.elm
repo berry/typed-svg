@@ -1,15 +1,24 @@
-module TypedSvg.Core exposing (..)
+module TypedSvg.Core exposing
+    ( Svg, text, node, map
+    , Attribute, attribute, attributeNS, svgNamespace
+    )
 
 {-|
+
+
 # SVG Nodes
+
 @docs Svg, text, node, map
 
+
 # SVG Attributes
+
 @docs Attribute, attribute, attributeNS, svgNamespace
+
 -}
 
-import VirtualDom
 import Json.Encode as Json
+import VirtualDom
 
 
 {-| The core building block to create SVG. This library is filled with helper
@@ -22,7 +31,7 @@ type alias Svg msg =
 {-| Set attributes on your `Svg`.
 -}
 type alias Attribute msg =
-    VirtualDom.Property msg
+    VirtualDom.Attribute msg
 
 
 {-| -}
@@ -32,9 +41,9 @@ svgNamespace =
 
 
 {-| Create any SVG node. To create a `<rect>` helper function, you would write:
-    rect : List (Attribute msg) -> List (Svg msg) -> Svg msg
-    rect attributes children =
-        node "rect" attributes children
+rect : List (Attribute msg) -> List (Svg msg) -> Svg msg
+rect attributes children =
+node "rect" attributes children
 You should always be able to use the helper functions already defined in this
 library though!
 -}

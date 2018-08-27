@@ -1,9 +1,9 @@
-module Examples.Basic exposing (..)
+module Examples.Basic exposing (Model, Msg(..), view)
 
 import Html exposing (Html)
-import Color
-import TypedSvg exposing (svg, circle)
-import TypedSvg.Attributes exposing (viewBox, cx, cy, r, fill, strokeWidth, stroke)
+import TypedSvg exposing (circle, svg)
+import TypedSvg.Attributes exposing (cx, cy, fill, r, stroke, strokeWidth, viewBox)
+import TypedSvg.Color as Color
 import TypedSvg.Types exposing (px)
 
 
@@ -24,7 +24,7 @@ view model =
             [ cx (px 150)
             , cy (px 150)
             , r (px 30)
-            , fill Color.black
+            , fill <| Color.rgba 255 255 255 1 -- black
             , strokeWidth (px 2)
             , stroke <| Color.rgba 90 60 60 0.5
             ]
