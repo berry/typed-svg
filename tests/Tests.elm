@@ -1,22 +1,16 @@
-module Tests exposing (..)
+module Tests exposing (all, testFontFamily, testFontSize, testFontWeight, testLengthAttrEqual, testNumberAttrEqual, testPaintAttrEqual, testPointerEvents, testTransforms, testViewBox)
 
 -- Test Harness --
-
-import Test exposing (..)
-import Expect exposing (Expectation)
-import Fuzz exposing (list, int, tuple, string)
-
-
 -- Libs --
-
-import Color
-import Svg exposing (Attribute)
-import Svg.Attributes as Att
-
-
 -- Under Test --
 
+import Color
+import Expect exposing (Expectation)
+import Fuzz exposing (int, list, string, tuple)
+import Svg exposing (Attribute)
+import Svg.Attributes as Att
 import Svg.TypedAttributes exposing (..)
+import Test exposing (..)
 
 
 all : Test

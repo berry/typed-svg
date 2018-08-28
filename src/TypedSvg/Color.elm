@@ -44,7 +44,7 @@ colorToCssRgba cl =
         { red, green, blue, alpha } =
             toRgb cl
     in
-    cssColorString "rgb"
+    cssColorString "rgba"
         [ String.fromFloat red
         , String.fromFloat green
         , String.fromFloat blue
